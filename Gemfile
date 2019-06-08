@@ -37,7 +37,7 @@ end
 group :development do
   gem 'image_optim', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'overcommit', require: false
+  gem 'overcommit'
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
