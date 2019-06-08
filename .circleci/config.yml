@@ -39,6 +39,13 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+      - run: >
+          git config --global user.email "github@ericgross.com  " &&
+          git config --global user.name "CircleCI Testing" &&
+          bundle exec overcommit --sign &&
+          bundle exec overcommit --sign pre-commit &&
+          bundle exec overcommit --run
+
       - run:
           name: Wait for database
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
