@@ -15,15 +15,25 @@
 #
 # Uncomment the following lines to make the configuration take effect.
 
-#PreCommit:
+PreCommit:
 #  RuboCop:
 #    enabled: true
 #    on_warn: fail # Treat all warnings as failures
 #
-#  TrailingWhitespace:
-#    enabled: true
-#    exclude:
-#      - '**/db/structure.sql' # Ignore trailing whitespace in generated files
+  TrailingWhitespace:
+    enabled: true
+    exclude:
+      - '**/db/structure.sql' # Ignore trailing whitespace in generated files
+      - '/.idea/**' # Ignore trailing whitespace in generated files
+
+  CssLint:
+    enabled: false
+
+  Jscs:
+    enabled: false
+
+  JsHint:
+    enabled: false
 #
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type

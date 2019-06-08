@@ -42,6 +42,7 @@ jobs:
       - run: >
           git config --global user.email "github@ericgross.com  " &&
           git config --global user.name "CircleCI Testing" &&
+          bundle exec overcommit --sign &&
           bundle exec overcommit --sign pre-commit &&
           bundle exec overcommit --run
 
