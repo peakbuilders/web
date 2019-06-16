@@ -13,8 +13,10 @@ gem 'webpacker', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'high_voltage'
+gem "figaro"
 gem 'flutie'
 gem "slim-rails"
+gem 'braintree'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -23,13 +25,15 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'image_optim', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'overcommit'
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0' # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
