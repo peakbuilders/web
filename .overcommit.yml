@@ -34,6 +34,11 @@ PreCommit:
 
   JsHint:
     enabled: false
+
+  PreCommit:
+    RuboCop:
+      enabled: true
+      command: ['bundle', 'exec', 'rubocop']
 #
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type
