@@ -17,6 +17,7 @@ gem 'figaro'
 gem 'flutie'
 gem 'high_voltage'
 gem 'phony_rails'
+gem 'sentry-raven'
 gem 'slim-rails'
 
 group :development, :test do
