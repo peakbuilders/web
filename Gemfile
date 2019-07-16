@@ -16,6 +16,7 @@ gem 'braintree'
 gem 'figaro'
 gem 'flutie'
 gem 'high_voltage'
+gem 'phony_rails'
 gem 'slim-rails'
 
 group :development, :test do

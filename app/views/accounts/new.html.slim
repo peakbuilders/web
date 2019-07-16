@@ -1,13 +1,20 @@
-h1 Pay me!
+h1 Join
 
 = form_for @account do |f|
-  = f.label :email
-  = f.email_field :email
+  ul.fields
+    li.field
+      = f.label :email
+      = f.email_field :email, required: true
+    li.field
+      = f.label :phone_number
+      = f.telephone_field :phone_number, required: true
+    li.field
+      = f.label :referrer
+      = f.text_field :referrer, required: true
   = f.hidden_field :payment_method_nonce
-  = f.submit 'Join now!'
-
-.bt-drop-in-wrapper
-  #bt-dropin
+  .bt-drop-in-wrapper
+    #bt-dropin
+  = f.submit 'Join now', data: { disable_with: false }
 
 script[src="https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js"]
 javascript:

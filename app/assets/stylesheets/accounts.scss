@@ -1,3 +1,20 @@
-// Place all the styles related to the accounts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.accounts-new {
+  font-family: 'Barlow', sans-serif;
+  color: #1a2633;
+
+  h1 {
+    text-align: center;
+  }
+
+  .field {
+    text-align: center;
+  }
+
+  .fields li,
+  .field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+}
