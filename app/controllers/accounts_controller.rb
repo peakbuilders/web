@@ -10,6 +10,9 @@ class AccountsController < ApplicationController
     result = charge
 
     if result.success? || result.transaction
+      account = Account.new(account_params)
+      account.save!
+
       redirect_to '/member'
     else
       error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
@@ -30,6 +33,10 @@ class AccountsController < ApplicationController
   end
 
   private
+
+  def account_params
+    params.require(:account).permit(:email, :referrer, :phone_number)
+  end
 
   def charge
     nonce = params.dig(:account, :payment_method_nonce)
