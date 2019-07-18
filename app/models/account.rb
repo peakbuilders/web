@@ -12,7 +12,9 @@
 #  updated_at   :datetime         not null
 #
 
-class Account < ApplicationRecord
+class Account < ActiveRecord::Base
+  self.abstract_class = false
+
   phony_normalize :phone_number, default_country_code: 'US'
 
   validates :email, uniqueness: true, null: false
