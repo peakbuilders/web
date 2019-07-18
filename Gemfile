@@ -12,6 +12,7 @@ gem 'rails', '~> 6.0.0.rc1'
 gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
 
+gem 'administrate'
 gem 'braintree'
 gem 'figaro'
 gem 'flutie'
