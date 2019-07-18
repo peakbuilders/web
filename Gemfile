@@ -12,7 +12,7 @@ gem 'rails', '~> 6.0.0.rc1'
 gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
 
-gem 'administrate'
+gem 'administrate', git: 'https://github.com/thoughtbot/administrate.git'
 gem 'braintree'
 gem 'figaro'
 gem 'flutie'
