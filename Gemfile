@@ -18,6 +18,7 @@ gem 'figaro'
 gem 'flutie'
 gem 'high_voltage'
 gem 'phony_rails'
+gem 'pundit'
 gem 'sentry-raven'
 gem 'slim-rails'
 
