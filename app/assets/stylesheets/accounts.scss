@@ -11,10 +11,16 @@
   }
 
   .fields li,
-  .field {
+  .field,
+  .center {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+  }
+
+  .center-form {
+    display: flex;
+    justify-content: center;
   }
 
   svg {
@@ -22,5 +28,23 @@
     height: auto;
     display: block;
     margin: auto;
+  }
+
+  .bt-drop-in-wrapper {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  label {
+    margin-right: 1em;
+  }
+
+  li {
+    margin: .5em 0 .5em 0;
+  }
+
+  [type="submit"] {
+    margin-top: 2em;
+    font-size: xx-large;
   }
 }

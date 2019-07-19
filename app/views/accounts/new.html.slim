@@ -1,23 +1,25 @@
-.field
+.center
   = inline_svg 'tape.svg'
 
 h1 Yearly Membership Fee - $125
 
-= form_for @account do |f|
-  ul.fields
-    li.field
-      = f.label :email
-      = f.email_field :email, required: true
-    li.field
-      = f.label :phone_number
-      = f.telephone_field :phone_number, required: true
-    li.field
-      = f.label :referrer
-      = f.text_field :referrer, required: true
-  = f.hidden_field :payment_method_nonce
-  .bt-drop-in-wrapper
-    #bt-dropin
-  = f.submit 'Join now', data: { disable_with: false }
+.center-form
+  = form_for @account, class: 'center-form' do |f|
+    ul.fields
+      li.field
+        = f.label :email
+        = f.email_field :email, required: true
+      li.field
+        = f.label :phone_number
+        = f.telephone_field :phone_number, required: true
+      li.field
+        = f.label :referrer
+        = f.text_field :referrer, required: true
+    = f.hidden_field :payment_method_nonce
+    .bt-drop-in-wrapper
+      #bt-dropin
+    .center-form
+      = f.submit 'Join now', data: { disable_with: false }
 
 script[src="https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js"]
 javascript:
