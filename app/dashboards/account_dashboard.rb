@@ -14,6 +14,7 @@ class AccountDashboard < Administrate::BaseDashboard
     email: Field::String,
     phone_number: Field::String,
     referrer: Field::String,
+    join_transaction_id: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -37,6 +38,7 @@ class AccountDashboard < Administrate::BaseDashboard
     email
     phone_number
     referrer
+    join_transaction_id
     created_at
     updated_at
   ].freeze
