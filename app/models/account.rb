@@ -4,12 +4,13 @@
 #
 # Table name: accounts
 #
-#  id           :bigint           not null, primary key
-#  email        :string           not null
-#  phone_number :string           not null
-#  referrer     :string           not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                  :bigint           not null, primary key
+#  email               :string           not null
+#  phone_number        :string           not null
+#  referrer            :string           not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  join_transaction_id :string
 #
 
 class Account < ApplicationRecord

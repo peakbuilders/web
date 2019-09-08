@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
     result = charge
 
     if result.success? || result.transaction
-      account = Account.new(account_params)
+      account = Account.new(account_params.merge(join_transaction_id: result.transaction.id))
       account.save!
 
       redirect_to '/member'

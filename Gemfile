@@ -23,8 +23,10 @@ gem 'pundit'
 gem 'sentry-raven'
 gem 'slim-rails'
 
+gem 'pry-rails'
+
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_174205) do
+ActiveRecord::Schema.define(version: 2019_09_08_171805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_06_16_174205) do
     t.string "referrer", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "join_transaction_id"
   end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
