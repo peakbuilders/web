@@ -34,10 +34,6 @@ class AccountsController < ApplicationController
 
   private
 
-  def account_params
-    params.require(:account).permit(:email, :referrer, :phone_number)
-  end
-
   def charge
     nonce = params.dig(:account, :payment_method_nonce)
 
@@ -46,7 +42,12 @@ class AccountsController < ApplicationController
       payment_method_nonce: nonce,
       options: {
         submit_for_settlement: true
-      }
+      },
+      email: account_params.fetch(:email)
     )
+  end
+
+  def account_params
+    params.require(:account).permit(:email, :referrer, :phone_number)
   end
 end
