@@ -40,10 +40,12 @@ class AccountsController < ApplicationController
     gateway.transaction.sale(
       amount: 125,
       payment_method_nonce: nonce,
+      customer: {
+        email: account_params.fetch(:email)
+      },
       options: {
         submit_for_settlement: true
       },
-      email: account_params.fetch(:email)
     )
   end
 
