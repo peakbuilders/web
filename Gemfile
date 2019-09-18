@@ -25,6 +25,8 @@ gem 'slim-rails'
 
 gem 'pry-rails'
 
+gem "sentry-raven"
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
