@@ -15,6 +15,15 @@ class AccountDashboard < Administrate::BaseDashboard
     phone_number: Field::String,
     referrer: Field::String,
     join_transaction_id: Field::String,
+
+    first_name: Field::String,
+    last_name: Field::String,
+    address_1: Field::String,
+    address_2: Field::String,
+    city: Field::String,
+    state: Field::String,
+    postal_code: Field::String,
+
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -39,6 +48,13 @@ class AccountDashboard < Administrate::BaseDashboard
     phone_number
     referrer
     join_transaction_id
+    first_name
+    last_name
+    address_1
+    address_2
+    city
+    state
+    postal_code
     created_at
     updated_at
   ].freeze
@@ -50,6 +66,13 @@ class AccountDashboard < Administrate::BaseDashboard
     email
     phone_number
     referrer
+    first_name
+    last_name
+    address_1
+    address_2
+    city
+    state
+    postal_code
   ].freeze
 
   # Overwrite this method to customize how accounts are displayed
