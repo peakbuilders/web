@@ -50,6 +50,17 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(:email, :referrer, :phone_number)
+    params.require(:account).permit(
+                                :address_1,
+                                :address_2,
+                                :city,
+        :email,
+        :first_name,
+        :last_name,
+                                :postal_code,
+        :phone_number,
+        :referrer,
+        :phone_number,
+                                :state)
   end
 end
