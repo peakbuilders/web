@@ -11,28 +11,28 @@ h1 Yearly Membership Fee - $125
         = f.email_field :email, required: true
       li.field
         = f.label :first_name
-        = f.email_field :first_name, required: true
+        = f.text_field :first_name, required: true
       li.field
         = f.label :last_name
-        = f.email_field :last_name, required: true
+        = f.text_field :last_name, required: true
       li.field
         = f.label :phone_number
         = f.telephone_field :phone_number, required: true
       li.field
         = f.label :address_1
-        = f.telephone_field :address_1, required: true
+        = f.text_field :address_1, required: true
       li.field
         = f.label :address_2
-        = f.telephone_field :address_2, required: true
+        = f.text_field :address_2, required: true
       li.field
         = f.label :city
-        = f.telephone_field :city, required: true
+        = f.text_field :city, required: true
       li.field
         = f.label :state
-        = f.telephone_field :state, required: true
+        = f.text_field :state, required: true
       li.field
         = f.label :postal_code
-        = f.telephone_field :postal_code, required: true
+        = f.text_field :postal_code, required: true
       li.field
         = f.label :referrer
         = f.text_field :referrer, required: true
