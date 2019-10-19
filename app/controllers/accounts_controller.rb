@@ -45,22 +45,28 @@ class AccountsController < ApplicationController
       },
       options: {
         submit_for_settlement: true
-      },
+      }
     )
   end
 
   def account_params
     params.require(:account).permit(
-                                :address_1,
-                                :address_2,
-                                :city,
-        :email,
-        :first_name,
-        :last_name,
-                                :postal_code,
-        :phone_number,
-        :referrer,
-        :phone_number,
-                                :state)
+      :address_1,
+      :address_2,
+      :city,
+      :email,
+      :first_name,
+      :last_name,
+      :postal_code,
+      :phone_number,
+      :referrer,
+      :phone_number,
+      :state,
+      :profession,
+      :work_description,
+      :how_can_you_help,
+      :how_can_you_be_helped,
+      :anything_else
+    )
   end
 end

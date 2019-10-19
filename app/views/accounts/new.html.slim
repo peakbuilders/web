@@ -36,6 +36,22 @@ h1 Yearly Membership Fee - $125
       li.field
         = f.label :referrer
         = f.text_field :referrer, required: true
+      li.field
+        = f.label :profession
+        = f.text_field :profession, required: true
+      li.field
+        = f.label :work_description
+        = f.text_area :work_description, required: true
+      li.field
+        = f.label :how_can_you_help
+        = f.text_area :how_can_you_help, required: true
+      li.field
+        = f.label :how_can_you_be_helped
+        = f.text_area :how_can_you_be_helped, required: true
+      li.field
+        = f.label :anything_else
+        = f.text_area :anything_else, required: true
+
     = f.hidden_field :payment_method_nonce
     .bt-drop-in-wrapper
       #bt-dropin

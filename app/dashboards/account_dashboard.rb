@@ -24,6 +24,12 @@ class AccountDashboard < Administrate::BaseDashboard
     state: Field::String,
     postal_code: Field::String,
 
+    profession: Field::String,
+    work_description: Field::String,
+    how_can_you_help: Field::String,
+    how_can_you_be_helped: Field::String,
+    anything_else: Field::String,
+
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -55,6 +61,11 @@ class AccountDashboard < Administrate::BaseDashboard
     city
     state
     postal_code
+    profession
+    work_description
+    how_can_you_help
+    how_can_you_be_helped
+    anything_else
     created_at
     updated_at
   ].freeze
@@ -73,6 +84,11 @@ class AccountDashboard < Administrate::BaseDashboard
     city
     state
     postal_code
+    profession
+    work_description
+    how_can_you_help
+    how_can_you_be_helped
+    anything_else
   ].freeze
 
   # Overwrite this method to customize how accounts are displayed

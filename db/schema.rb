@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_100905) do
+ActiveRecord::Schema.define(version: 2019_10_19_184301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 2019_09_28_100905) do
     t.string "city"
     t.string "state"
     t.string "postal_code"
+    t.string "profession"
+    t.string "work_description"
+    t.string "how_can_you_help"
+    t.string "how_can_you_be_helped"
+    t.string "anything_else"
   end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
