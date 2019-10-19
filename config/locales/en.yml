@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      account:
+        work_description: "Expanded work description"
+        how_can_you_help: "How can you help the Peak community?"
+        how_can_you_be_helped: "How can the Peak community help you?"
+        anything_else: "Anything else you would like to share?"
