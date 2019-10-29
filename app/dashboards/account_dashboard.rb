@@ -30,6 +30,13 @@ class AccountDashboard < Administrate::BaseDashboard
     how_can_you_be_helped: Field::String,
     anything_else: Field::String,
 
+    website: Field::String,
+    birthday: Field::DateTime,
+    twitter: Field::String,
+    instagram: Field::String,
+    facebook: Field::String,
+    linkedin: Field::String,
+
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -66,6 +73,12 @@ class AccountDashboard < Administrate::BaseDashboard
     how_can_you_help
     how_can_you_be_helped
     anything_else
+    website
+    birthday
+    twitter
+    instagram
+    facebook
+    linkedin
     created_at
     updated_at
   ].freeze
@@ -89,6 +102,12 @@ class AccountDashboard < Administrate::BaseDashboard
     how_can_you_help
     how_can_you_be_helped
     anything_else
+    website
+    birthday
+    twitter
+    instagram
+    facebook
+    linkedin
   ].freeze
 
   # Overwrite this method to customize how accounts are displayed

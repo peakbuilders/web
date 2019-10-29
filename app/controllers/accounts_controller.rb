@@ -66,7 +66,13 @@ class AccountsController < ApplicationController
       :work_description,
       :how_can_you_help,
       :how_can_you_be_helped,
-      :anything_else
+      :anything_else,
+      :website,
+      :birthday,
+      :twitter,
+      :instagram,
+      :facebook,
+      :linkedin
     )
   end
 end

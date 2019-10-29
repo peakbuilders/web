@@ -8,17 +8,23 @@
 #  address_1             :string
 #  address_2             :string
 #  anything_else         :string
+#  birthday              :date
 #  city                  :string
 #  email                 :string           not null
+#  facebook              :string
 #  first_name            :string
 #  how_can_you_be_helped :string
 #  how_can_you_help      :string
+#  instagram             :string
 #  last_name             :string
+#  linkedin              :string
 #  phone_number          :string           not null
 #  postal_code           :string
 #  profession            :string
 #  referrer              :string           not null
 #  state                 :string
+#  twitter               :string
+#  website               :string
 #  work_description      :string
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null

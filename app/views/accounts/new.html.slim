@@ -49,8 +49,23 @@ h1 Yearly Membership Fee - $125
         = f.label :how_can_you_be_helped
         = f.text_area :how_can_you_be_helped, required: true
       li.field
-        = f.label :anything_else
-        = f.text_area :anything_else, required: true
+        = f.label :website
+        = f.url_field :website, required: true
+      li.field
+        = f.label :birthday
+        = f.date_field :birthday, required: true
+      li.field
+        = f.label :twitter
+        = f.text_field :twitter, required: true
+      li.field
+        = f.label :instagram
+        = f.text_field :instagram, required: true
+      li.field
+        = f.label :facebook
+        = f.text_field :facebook, required: true
+      li.field
+        = f.label :linkedin
+        = f.text_field :linkedin, required: true
 
     = f.hidden_field :payment_method_nonce
     .bt-drop-in-wrapper

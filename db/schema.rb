@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_184301) do
+ActiveRecord::Schema.define(version: 2019_10_29_104905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 2019_10_19_184301) do
     t.string "how_can_you_help"
     t.string "how_can_you_be_helped"
     t.string "anything_else"
+    t.string "website"
+    t.date "birthday"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "facebook"
+    t.string "linkedin"
   end
 
   create_table "action_text_rich_texts", force: :cascade do |t|
