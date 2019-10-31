@@ -30,7 +30,7 @@ class AccountDashboard < Administrate::BaseDashboard
     how_can_you_be_helped: Field::String,
     anything_else: Field::String,
 
-    website: Field::String,
+    website: Field::Url,
     birthday: Field::DateTime,
     twitter: Field::String,
     instagram: Field::String,
