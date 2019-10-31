@@ -11,6 +11,10 @@
     margin-right: 1em;
   }
 
+  input {
+    width: 60%;
+  }
+
   li {
     margin: .5em 0 .5em 0;
   }
@@ -20,8 +24,14 @@
     width: 200%;
   }
 
+  .one-line {
+    width: 30%;
+    text-align: right;
+  }
+
   .field {
     text-align: center;
+    justify-content: center;
   }
 
   .fields li,
