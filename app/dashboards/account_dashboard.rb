@@ -11,6 +11,7 @@ class AccountDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    magic_link: Field::Url,
     email: Field::String,
     phone_number: Field::String,
     referrer: Field::String,
@@ -37,6 +38,10 @@ class AccountDashboard < Administrate::BaseDashboard
     facebook: Field::String,
     linkedin: Field::String,
 
+    outbound_sign_in_token: Field::String,
+    sign_in_token: Field::String,
+    sign_in_token_sent_at: Field::DateTime,
+
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -58,6 +63,10 @@ class AccountDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     email
+    magic_link
+    outbound_sign_in_token
+    sign_in_token
+    sign_in_token_sent_at
     phone_number
     referrer
     join_transaction_id

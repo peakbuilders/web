@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 2019_10_31_113608) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
+    t.string "sign_in_token"
+    t.string "outbound_sign_in_token"
+    t.datetime "sign_in_token_sent_at"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end

@@ -23,6 +23,7 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
 #  linkedin               :string
+#  outbound_sign_in_token :string
 #  phone_number           :string           not null
 #  postal_code            :string
 #  profession             :string
@@ -31,6 +32,8 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
+#  sign_in_token          :string
+#  sign_in_token_sent_at  :datetime
 #  state                  :string
 #  twitter                :string
 #  website                :string
@@ -50,8 +53,22 @@ class Account < ApplicationRecord
 
   phony_normalize :phone_number, default_country_code: 'US'
 
+  after_create :generate_outbound_magic_token
+
   validates :email, uniqueness: true, null: false
   validates :referrer, null: false, empty: false
 
   attr_accessor :payment_method_nonce
+
+  def magic_link
+    Rails.application.routes.url_helpers.member_url(self, email: email, sign_in_token: outbound_sign_in_token)
+  end
+
+  private
+
+  def generate_outbound_magic_token
+    raw, enc = Devise.token_generator.generate(self.class, :sign_in_token)
+
+    update!(sign_in_token: enc, sign_in_token_sent_at: Time.zone.now, outbound_sign_in_token: raw)
+  end
 end

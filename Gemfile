@@ -25,8 +25,6 @@ gem 'slim-rails'
 
 gem 'pry-rails'
 
-gem 'sentry-raven'
-
 gem 'devise'
 
 group :development, :test do
