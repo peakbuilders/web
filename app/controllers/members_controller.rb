@@ -8,6 +8,8 @@ class MembersController < ApplicationController
   private
 
   def authenticate_account_by_sign_in_token!
+    return if account_signed_in?
+
     email = params[:email].presence
     token = params[:sign_in_token].presence
     account = email && token && Account.find_by(email: email)
@@ -16,10 +18,8 @@ class MembersController < ApplicationController
       flash.now[:alert] = 'You are already signed in'
     elsif account && token_matches?(account) && token_not_expired?(account)
       flash[:notice] = 'You have signed in successfully'
-      account.update_columns(sign_in_token: nil, sign_in_token_sent_at: nil)
       sign_in account
     else
-      raise 'hi'
       flash[:alert] = 'Your sign in token is invalid'
       redirect_to main_app.root_path
     end

@@ -53,7 +53,7 @@ class Account < ApplicationRecord
 
   phony_normalize :phone_number, default_country_code: 'US'
 
-  after_create :generate_outbound_magic_token
+  after_save :generate_outbound_magic_token
 
   validates :email, uniqueness: true, null: false
   validates :referrer, null: false, empty: false
@@ -67,6 +67,8 @@ class Account < ApplicationRecord
   private
 
   def generate_outbound_magic_token
+    return if sign_in_token
+
     raw, enc = Devise.token_generator.generate(self.class, :sign_in_token)
 
     update!(sign_in_token: enc, sign_in_token_sent_at: Time.zone.now, outbound_sign_in_token: raw)
