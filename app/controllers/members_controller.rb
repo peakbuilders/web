@@ -3,6 +3,10 @@
 class MembersController < ApplicationController
   before_action :authenticate_account_by_sign_in_token!
 
+  def index
+    @members = Account.all
+  end
+
   def show; end
 
   private

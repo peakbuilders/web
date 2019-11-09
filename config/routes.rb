@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :accounts
 
   resources :accounts
-  resources :members, only: [:show]
+  resources :members, only: [:index, :show]
   resources :profiles, only: [:edit]
 
   namespace :admin do
