@@ -5,13 +5,14 @@ h1 Yearly Membership Fee - $125
 
 = render 'form', locals: {submit_text: 'Join now'}
 
-script[src="https://js.braintreegateway.com/web/dropin/1.18.0/js/dropin.min.js"]
+script[src="https://js.braintreegateway.com/web/dropin/1.20.4/js/dropin.min.js"]
 javascript:
   var form = document.querySelector('#new_account');
   var client_token = "#{ @client_token }";
   braintree.dropin.create({
     authorization: client_token,
-    container: '#bt-dropin'
+    container: '#bt-dropin',
+    venmo: {}
   }, function (createErr, instance) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
