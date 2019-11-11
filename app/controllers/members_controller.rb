@@ -21,7 +21,7 @@ class MembersController < ApplicationController
     if token && account_signed_in?
       flash.now[:alert] = 'You are already signed in'
     elsif account && token_matches?(account) && token_not_expired?(account)
-      flash[:notice] = 'You have signed in successfully'
+      flash[:notice] = 'You have successfully signed in to Peak Builders Network'
       sign_in account
     else
       flash[:alert] = 'Your sign in token is invalid'
