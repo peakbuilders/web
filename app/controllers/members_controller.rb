@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   before_action :authenticate_account_by_sign_in_token!
 
   def index
-    @members = Account.all
+    @members = Account.order(:state, :city)
   end
 
   def show; end
