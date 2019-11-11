@@ -12,6 +12,11 @@ javascript:
   braintree.dropin.create({
     authorization: client_token,
     container: '#bt-dropin',
+    paypal: {
+        flow: 'checkout',
+        amount: '125.00',
+        currency: 'USD'
+    },
     venmo: {}
   }, function (createErr, instance) {
     form.addEventListener('submit', function (event) {
