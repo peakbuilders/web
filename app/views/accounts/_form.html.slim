@@ -12,28 +12,28 @@
         = f.text_field :last_name, required: true
       li.field
         = f.label :phone_number, class: 'one-line'
-        = f.telephone_field :phone_number, required: false
+        = f.telephone_field :phone_number, required: true
       li.field
         = f.label :address_1, class: 'one-line'
-        = f.text_field :address_1, required: false
+        = f.text_field :address_1, required: true
       li.field
         = f.label :address_2, class: 'one-line'
         = f.text_field :address_2, required: false
       li.field
         = f.label :city, class: 'one-line'
-        = f.text_field :city, required: false
+        = f.text_field :city, required: true
       li.field
         = f.label :state, class: 'one-line'
-        = f.text_field :state, required: false
+        = f.text_field :state, required: true
       li.field
         = f.label :postal_code, class: 'one-line'
-        = f.text_field :postal_code, required: false
+        = f.text_field :postal_code, required: true
       li.field
         = f.label :referrer, class: 'one-line'
         = f.text_field :referrer, required: true
       li.field
         = f.label :profession, class: 'one-line'
-        = f.text_field :profession, required: false
+        = f.text_field :profession, required: true
       li.field
         = f.label :work_description
         = f.text_area :work_description, required: false
