@@ -15,52 +15,52 @@
         = f.telephone_field :phone_number, required: true
       li.field
         = f.label :address_1, class: 'one-line'
-        = f.text_field :address_1, required: true
+        = f.text_field :address_1, required: false
       li.field
         = f.label :address_2, class: 'one-line'
-        = f.text_field :address_2, required: true
+        = f.text_field :address_2, required: false
       li.field
         = f.label :city, class: 'one-line'
-        = f.text_field :city, required: true
+        = f.text_field :city, required: false
       li.field
         = f.label :state, class: 'one-line'
-        = f.text_field :state, required: true
+        = f.text_field :state, required: false
       li.field
         = f.label :postal_code, class: 'one-line'
-        = f.text_field :postal_code, required: true
+        = f.text_field :postal_code, required: false
       li.field
         = f.label :referrer, class: 'one-line'
         = f.text_field :referrer, required: true
       li.field
         = f.label :profession, class: 'one-line'
-        = f.text_field :profession, required: true
+        = f.text_field :profession, required: false
       li.field
         = f.label :work_description
-        = f.text_area :work_description, required: true
+        = f.text_area :work_description, required: false
       li.field
         = f.label :how_can_you_help
-        = f.text_area :how_can_you_help, required: true
+        = f.text_area :how_can_you_help, required: false
       li.field
         = f.label :how_can_you_be_helped
-        = f.text_area :how_can_you_be_helped, required: true
+        = f.text_area :how_can_you_be_helped, required: false
       li.field
         = f.label :website, class: 'one-line'
-        = f.url_field :website, required: true
+        = f.url_field :website, required: false
       li.field
         = f.label :birthday, class: 'one-line'
-        = f.date_field :birthday, required: true
+        = f.date_field :birthday, required: false
       li.field
         = f.label :twitter, class: 'one-line'
-        = f.text_field :twitter, required: true
+        = f.text_field :twitter, required: false
       li.field
         = f.label :instagram, class: 'one-line'
-        = f.text_field :instagram, required: true
+        = f.text_field :instagram, required: false
       li.field
         = f.label :facebook, class: 'one-line'
-        = f.text_field :facebook, required: true
+        = f.text_field :facebook, required: false
       li.field
         = f.label :linkedin, class: 'one-line'
-        = f.text_field :linkedin, required: true
+        = f.text_field :linkedin, required: false
 
     = f.hidden_field :payment_method_nonce
     .bt-drop-in-wrapper
