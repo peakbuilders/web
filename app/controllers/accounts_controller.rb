@@ -9,16 +9,14 @@ class AccountsController < ApplicationController
   def create
     result = charge
 
-    if result.success? || result.transaction
+    if result.success? && result.transaction
       account = Account.new(account_params.merge(join_transaction_id: result.transaction.id))
-      account.save!
-
-      redirect_to '/member'
-    else
-      error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
-      flash[:error] = error_messages
-      redirect_to new_account_path
+      return redirect_to '/member' if account.save
     end
+
+    error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
+    flash[:error] = error_messages
+    redirect_to new_account_path
   end
 
   def gateway

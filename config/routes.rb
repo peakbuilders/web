@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   get 'profiles/edit'
-  devise_for :accounts
+  devise_for :accounts, skip: [:registrations]
 
   resources :accounts
   resources :members, only: [:index, :show]
