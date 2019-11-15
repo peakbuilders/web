@@ -9,8 +9,9 @@ class AccountsController < ApplicationController
   def create
     result = charge
 
-    if result.success? && result.transaction
-      account = Account.new(account_params.merge(join_transaction_id: result.transaction.id))
+    if result.success? || result.transaction
+      password = Devise.friendly_token.first(8)
+      account = Account.new(account_params.merge(join_transaction_id: result.transaction.id, password: password))
       account.save
 
       if !account.valid?
