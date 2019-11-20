@@ -1,1 +1,10 @@
 inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'bin/**'
+    - 'db/data_schema.rb'
+    - 'db/schema.rb'
+
+Style/Documentation:
+  Enabled: false

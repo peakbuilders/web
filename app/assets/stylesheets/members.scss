@@ -1,0 +1,37 @@
+.members-index {
+  div {
+    outline-style: solid;
+    outline-width: thin;
+  }
+
+  .member-grid {
+    margin: 15px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding: 3px;
+  }
+
+  .header {
+    font-size: larger;
+    font-weight: bold;
+  }
+}
+
+.members-show {
+  a {
+    display: block;
+    margin-top: 1em;
+  }
+}

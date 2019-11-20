@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'profiles/edit'
+  devise_for :accounts, skip: [:registrations]
+
+  resources :accounts
+  resources :members, only: [:index, :show]
+  resources :profiles, only: [:edit]
+
+  namespace :admin do
+    resources :accounts
+
+    root to: 'accounts#index'
+  end
 end

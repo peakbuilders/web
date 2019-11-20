@@ -5,31 +5,44 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'rails', '~> 6.0.0.rc1'
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'rails', '~> 6.0.0.rc1'
 gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
-gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'high_voltage'
+gem 'administrate', git: 'https://github.com/thoughtbot/administrate.git'
+gem 'braintree'
+gem 'figaro'
 gem 'flutie'
-gem "slim-rails"
+gem 'high_voltage'
+gem 'inline_svg'
+gem 'phony_rails'
+gem 'pundit'
+gem 'sentry-raven'
+gem 'slim-rails'
+
+gem 'pry-rails'
+
+gem 'devise'
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
 end
 
 group :development do
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'image_optim', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'overcommit'
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0' # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
 end
 
 group :test do

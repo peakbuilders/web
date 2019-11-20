@@ -1,0 +1,28 @@
+.high_voltage-pages-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #1a2633;
+  font-family: 'Barlow', sans-serif;
+
+  .heading {
+    margin: 25px;
+    padding: 5px;
+    color: white;
+  }
+
+  .button {
+    margin: 70px;
+    padding:10px;
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    border: 1px solid #666;
+    color:#000;
+    text-decoration:none;
+  }
+
+  p {
+    color: white;
+  }
+}

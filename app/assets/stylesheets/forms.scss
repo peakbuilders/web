@@ -1,0 +1,50 @@
+form {
+  font-family: 'Barlow', sans-serif;
+  color: #1a2633;
+  margin-top: 1em;
+
+  label {
+    margin-right: 1em;
+  }
+
+  input {
+    width: 60%;
+  }
+
+  li {
+    margin: .5em 0 .5em 0;
+  }
+
+  textarea {
+    height: 100px;
+    width: 200%;
+  }
+
+  .one-line {
+    width: 30%;
+    text-align: right;
+  }
+
+  .field {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .fields li,
+  .field,
+  .center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .bt-drop-in-wrapper {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  [type="submit"] {
+    margin-top: 2em;
+    font-size: xx-large;
+  }
+}
