@@ -8,7 +8,7 @@ orbs:
   heroku: circleci/heroku@0.0.8
 
 jobs:
-  test:
+  build:
     docker:
       # specify the version you desire here
       - image: circleci/ruby:2.6.3-node-browsers
@@ -102,9 +102,12 @@ jobs:
           only-branch: master
 
 workflows:
-  build_and_test:
+  build-and-deploy:
     jobs:
-      - test
+      - build
       - deploy:
           requires:
-            - test
+            - build
+          filters:
+            branches:
+              only: master
