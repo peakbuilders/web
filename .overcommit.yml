@@ -25,6 +25,7 @@ PreCommit:
     exclude:
       - '**/db/structure.sql' # Ignore trailing whitespace in generated files
       - '/.idea/**' # Ignore trailing whitespace in generated files
+      - '/app/assets/images/**'
 
   CssLint:
     enabled: false
