@@ -94,20 +94,17 @@ jobs:
             tmp/test_results/
 
   deploy:
-    executor: heroku/default # Uses the basic buildpack-deps image, which has the prerequisites for installing heroku's CLI.
+    executor: heroku/default
     steps:
       - checkout
-      - heroku/install # Runs the heroku install command, if necessary.
-      - heroku/deploy-via-git: # Deploys branch to Heroku via git push.
-          only-branch: master
+      - heroku/install
+      - heroku/deploy-via-git
 
 workflows:
+  version: 2
   build-and-deploy:
     jobs:
       - build
       - deploy:
           requires:
             - build
-          filters:
-            branches:
-              only: master
