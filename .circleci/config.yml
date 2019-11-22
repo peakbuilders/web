@@ -37,7 +37,7 @@ jobs:
       - run:
           name: configure webpacker
           command: |
-            yarn run build && bundle exec webpacker:compile
+            yarn && bundle exec rake webpacker:compile
 
       - save_cache:
           paths:
