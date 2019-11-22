@@ -34,6 +34,11 @@ jobs:
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
+      - run:
+          name: configure webpacker
+          command: |
+            yarn run build && bundle exec webpacker:compile
+
       - save_cache:
           paths:
             - ./vendor/bundle
