@@ -69,12 +69,12 @@ jobs:
             braintree_public_key: key12345
             braintree_private_key: privatekey12345
           command: |
-            mkdir -p /tmp/test_results/rspec
+            mkdir -p tmp/test_results/rspec
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
-                            --out /tmp/test_results/rspec/results.xml \
+                            --out tmp/test_results/rspec/results.xml \
                             --format progress \
                             $TEST_FILES
 
