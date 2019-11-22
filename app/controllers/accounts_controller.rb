@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
       account = Account.new(account_params.merge(join_transaction_id: result.transaction.id, password: password))
       account.save
 
-      if !account.valid?
+      unless account.valid?
         flash[:alert] = account.errors
         return redirect_to new_account_path
       end

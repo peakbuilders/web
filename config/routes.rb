@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :accounts, skip: [:registrations]
 
   resources :accounts
-  resources :members, only: [:index, :show]
+  resources :members, only: %i[index show]
   resources :profiles, only: [:edit]
 
   namespace :admin do
