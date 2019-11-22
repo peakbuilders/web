@@ -31,6 +31,7 @@ describe 'accounts' do
 
   describe 'with the browser' do
     it 'allows a user to join', js: true do
+      pending
       visit root_path
       click_link 'Join'
       click_button 'Join now'
