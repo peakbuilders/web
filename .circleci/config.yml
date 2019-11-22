@@ -106,3 +106,5 @@ workflows:
     jobs:
       - build
       - deploy
+          require:
+            - build
