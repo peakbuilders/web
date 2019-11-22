@@ -45,3 +45,13 @@ PreCommit:
 #
 #  IndexTags:
 #    enabled: true # Generate a tags file with `ctags` each time HEAD changes
+
+PostCommit:
+  CircleCI:
+    enabled: true
+    required: true
+    description: Validate CircleCI config files
+    required_executable: "circleci"
+    flags: ["config", "validate"]
+    include:
+      - .circleci/config.yml
