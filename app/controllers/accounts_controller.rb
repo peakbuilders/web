@@ -3,57 +3,23 @@
 class AccountsController < ApplicationController
   def new
     @account = Account.new
-    @client_token = gateway.client_token.generate
   end
 
   def create
-    result = charge
+    @account = Account.new(account_params)
 
-    if result.success? || result.transaction
-      password = Devise.friendly_token.first(8)
-      account = Account.new(account_params.merge(join_transaction_id: result.transaction.id, password: password))
-      account.save
+    password = Devise.friendly_token.first(8)
+    params = account_params.merge(password: password)
+    @account = Account.new(params)
+    @account.save
 
-      unless account.valid?
-        flash[:alert] = account.errors
-        return redirect_to new_account_path
-      end
-
-      redirect_to '/member'
-    else
-      error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
-
-      flash[:alert] = error_messages
-      redirect_to new_account_path
+    unless @account.valid?
+      flash.now[:alert] = 'Please fix errors below and try again.'
+      return render :new
     end
-  end
 
-  def gateway
-    env = Figaro.env.braintree_environment!.to_sym
-
-    @gateway ||= Braintree::Gateway.new(
-      environment: env,
-      merchant_id: Figaro.env.braintree_merchant_id!,
-      public_key: Figaro.env.braintree_public_key!,
-      private_key: Figaro.env.braintree_private_key
-    )
-  end
-
-  private
-
-  def charge
-    nonce = params.dig(:account, :payment_method_nonce)
-
-    gateway.transaction.sale(
-      amount: 125,
-      payment_method_nonce: nonce,
-      customer: {
-        email: account_params.fetch(:email)
-      },
-      options: {
-        submit_for_settlement: true
-      }
-    )
+    sign_in @account
+    redirect_to new_payment_path
   end
 
   def account_params

@@ -7,17 +7,18 @@ form {
     margin-right: 1em;
   }
 
-  input {
+  input,
+  textarea {
     width: 60%;
   }
 
-  li {
+  .input {
     margin: .5em 0 .5em 0;
+    text-align: right;
   }
 
   textarea {
     height: 100px;
-    width: 200%;
   }
 
   .one-line {

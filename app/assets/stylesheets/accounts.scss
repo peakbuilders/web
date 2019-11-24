@@ -1,8 +1,12 @@
-.accounts-new {
+.accounts-new,
+.accounts-create {
   h1 {
     text-align: center;
   }
 
+  form {
+    min-width: 600px;
+  }
   .center svg {
     width: 50%;
     height: auto;
@@ -15,4 +19,7 @@
     justify-content: center;
   }
 
+  .error {
+    white-space: nowrap;
+  }
 }

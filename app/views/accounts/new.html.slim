@@ -1,34 +1,6 @@
 .center
-  = inline_svg 'tape.svg'
+  = inline_svg_tag 'tape.svg'
 
 h1 Yearly Membership Fee - $125
 
-= render 'form', locals: {submit_text: 'Join now'}
-
-script[src="https://js.braintreegateway.com/web/dropin/1.20.4/js/dropin.min.js"]
-javascript:
-  var form = document.querySelector('#new_account');
-  var client_token = "#{ @client_token }";
-  braintree.dropin.create({
-    authorization: client_token,
-    container: '#bt-dropin',
-    paypal: {
-        flow: 'checkout',
-        amount: '125.00',
-        currency: 'USD'
-    },
-    venmo: {}
-  }, function (createErr, instance) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      instance.requestPaymentMethod(function (err, payload) {
-        if (err) {
-          console.log('Error', err);
-          return;
-        }
-        // Add the nonce to the form and submit
-        document.querySelector('#account_payment_method_nonce').value = payload.nonce;
-        form.submit();
-      });
-    });
-  });
+= render 'form', locals: {submit_text: 'Next'}

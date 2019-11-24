@@ -55,8 +55,16 @@ class Account < ApplicationRecord
 
   after_save :generate_outbound_magic_token
 
-  validates :email, uniqueness: true, null: false
-  validates :referrer, null: false, empty: false
+  validates :email, uniqueness: true, null: false, presence: true
+  validates :referrer, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :phone_number, presence: true
+  validates :address_1, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :postal_code, presence: true
+  validates :profession, presence: true
 
   attr_accessor :payment_method_nonce
 

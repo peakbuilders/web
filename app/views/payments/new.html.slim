@@ -1,0 +1,33 @@
+= form_for :payment, url: payments_path do |f|
+  = f.hidden_field :payment_method_nonce
+  .btdropinwrapper
+    #btdropin
+  = f.submit 'Join now'
+
+script[src="https://js.braintreegateway.com/web/dropin/1.20.4/js/dropin.min.js"]
+javascript:
+  var form = document.querySelector('form');
+  var client_token = "#{ @client_token }";
+  braintree.dropin.create({
+    authorization: client_token,
+    container: '#btdropin',
+            paypal: {
+        flow: 'checkout',
+                amount: '125.00',
+                currency: 'USD'
+    },
+            venmo: {}
+  }, function (createErr, instance) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      instance.requestPaymentMethod(function (err, payload) {
+        if (err) {
+          console.log('Error', err);
+          return;
+        }
+        // Add the nonce to the form and submit
+        document.querySelector('#payment_payment_method_nonce').value = payload.nonce;
+        form.submit();
+      });
+    });
+  });

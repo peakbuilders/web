@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.shared_context 'mock_data' do # rubocop:disable Metrics/BlockLength
+RSpec.shared_context 'mock_data' do
   let(:mock_transaction) do
     double(Braintree::Transaction,
            id: 'my_id',

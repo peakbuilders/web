@@ -1,70 +1,23 @@
 .center-form
-  = form_for @account, class: 'center-form' do |f|
-    ul.fields
-      li.field
-        = f.label :email, class: 'one-line'
-        = f.email_field :email, required: true
-      li.field
-        = f.label :first_name, class: 'one-line'
-        = f.text_field :first_name, required: true
-      li.field
-        = f.label :last_name, class: 'one-line'
-        = f.text_field :last_name, required: true
-      li.field
-        = f.label :phone_number, class: 'one-line'
-        = f.telephone_field :phone_number, required: true
-      li.field
-        = f.label :address_1, class: 'one-line'
-        = f.text_field :address_1, required: true
-      li.field
-        = f.label :address_2, class: 'one-line'
-        = f.text_field :address_2, required: false
-      li.field
-        = f.label :city, class: 'one-line'
-        = f.text_field :city, required: true
-      li.field
-        = f.label :state, class: 'one-line'
-        = f.text_field :state, required: true
-      li.field
-        = f.label :postal_code, class: 'one-line'
-        = f.text_field :postal_code, required: true
-      li.field
-        = f.label :referrer, class: 'one-line'
-        = f.text_field :referrer, required: true
-      li.field
-        = f.label :profession, class: 'one-line'
-        = f.text_field :profession, required: true
-      li.field
-        = f.label :work_description
-        = f.text_area :work_description, required: false
-      li.field
-        = f.label :how_can_you_help
-        = f.text_area :how_can_you_help, required: false
-      li.field
-        = f.label :how_can_you_be_helped
-        = f.text_area :how_can_you_be_helped, required: false
-      li.field
-        = f.label :website, class: 'one-line'
-        = f.url_field :website, required: false
-      li.field
-        = f.label :birthday, class: 'one-line'
-        = f.date_field :birthday, required: false
-      li.field
-        = f.label :twitter, class: 'one-line'
-        = f.text_field :twitter, required: false
-      li.field
-        = f.label :instagram, class: 'one-line'
-        = f.text_field :instagram, required: false
-      li.field
-        = f.label :facebook, class: 'one-line'
-        = f.text_field :facebook, required: false
-      li.field
-        = f.label :linkedin, class: 'one-line'
-        = f.text_field :linkedin, required: false
-
-    = f.hidden_field :payment_method_nonce
-    .bt-drop-in-wrapper
-      #bt-dropin
-    .center-form
-      = f.submit locals.fetch(:submit_text), data: { disable_with: false }
+  = simple_form_for @account, class: 'center-form' do |f|
+    = f.input :email
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :phone_number
+    = f.input :address_1
+    = f.input :address_2
+    = f.input :city
+    = f.input :state
+    = f.input :postal_code
+    = f.input :referrer
+    = f.input :profession, as: :text
+    = f.input :work_description, as: :text
+    = f.input :how_can_you_help, as: :text
+    = f.input :website
+    = f.input :birthday
+    = f.input :twitter
+    = f.input :instagram
+    = f.input :facebook
+    = f.input :linkedin
+    = f.submit locals.fetch(:submit_text), data: { disable_with: false }
 

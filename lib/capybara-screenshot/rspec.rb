@@ -52,7 +52,7 @@ module Capybara
         attr_accessor :add_link_to_screenshot_for_failed_examples
 
         def after_failed_example(example)
-          if example.example_group.include?(Capybara::DSL) # Capybara DSL method has been included for a feature we can snapshot # rubocop:disable Metrics/LineLength,Style/GuardClause
+          if example.example_group.include?(Capybara::DSL) # Capybara DSL method has been included for a feature we can snapshot # rubocop:disable Style/GuardClause
             Capybara.using_session(Capybara::Screenshot.final_session_name) do
               if Capybara::Screenshot.autosave_on_failure && failed?(example) && Capybara.page.current_url != ''
                 filename_prefix = Capybara::Screenshot.filename_prefix_for(:rspec, example)
