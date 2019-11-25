@@ -6,4 +6,17 @@ class ProfilesController < ApplicationController
   def edit
     @account = current_account
   end
+
+  def update
+    @account = current_account
+    @account.update(account_params)
+    flash[:notice] = 'Profile updated.'
+    redirect_to member_path(@account)
+  end
+
+  private
+
+  def account_params
+    params.require(:account).permit(AccountsController.fields)
+  end
 end

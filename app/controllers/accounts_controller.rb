@@ -1,6 +1,33 @@
 # frozen_string_literal: true
 
 class AccountsController < ApplicationController
+  def self.fields
+    %i[
+      address_1
+      address_2
+      city
+      email
+      first_name
+      last_name
+      postal_code
+      phone_number
+      referrer
+      phone_number
+      state
+      profession
+      work_description
+      how_can_you_help
+      how_can_you_be_helped
+      anything_else
+      website
+      birthday
+      twitter
+      instagram
+      facebook
+      linkedin
+    ]
+  end
+
   def new
     @account = Account.new
   end
@@ -23,29 +50,6 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(
-      :address_1,
-      :address_2,
-      :city,
-      :email,
-      :first_name,
-      :last_name,
-      :postal_code,
-      :phone_number,
-      :referrer,
-      :phone_number,
-      :state,
-      :profession,
-      :work_description,
-      :how_can_you_help,
-      :how_can_you_be_helped,
-      :anything_else,
-      :website,
-      :birthday,
-      :twitter,
-      :instagram,
-      :facebook,
-      :linkedin
-    )
+    params.require(:account).permit(self.class.fields)
   end
 end
