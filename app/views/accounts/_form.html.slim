@@ -1,5 +1,5 @@
 .center-form
-  = simple_form_for @account, class: 'center-form' do |f|
+  = simple_form_for @account, class: 'center-form', url: locals.fetch(:url) do |f|
     = f.input :email
     = f.input :first_name
     = f.input :last_name
