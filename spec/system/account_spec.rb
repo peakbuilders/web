@@ -8,7 +8,6 @@ describe 'accounts' do
   let(:mock_gateway) { double('gateway') }
   let(:client_token) { OpenStruct.new(generate: 'your_client_token') }
   let(:transaction) { double('transaction') }
-  let(:failed_result) { Braintree::SuccessfulResult.new(transaction: mock_failed_transaction) }
   let(:successful_result) { Braintree::SuccessfulResult.new(transaction: mock_transaction) }
 
   describe 'without a browser' do

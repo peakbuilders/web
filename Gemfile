@@ -29,6 +29,8 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'memery'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
@@ -39,6 +41,10 @@ group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'factory_bot', require: false
+  gem 'guard-bundler', require: false
+  gem 'guard-rails', require: false
+  gem 'guard-rspec', require: false
   gem 'image_optim', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'overcommit'

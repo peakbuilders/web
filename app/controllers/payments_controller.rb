@@ -1,11 +1,23 @@
 # frozen_string_literal: true
 
 class PaymentsController < ApplicationController
+  include Memery
+
+  def self.amount
+    return @charge_amount if @charge_amount
+
+    125
+  end
+
   def new
     @client_token = gateway.client_token.generate
   end
 
   def create
+    flash[:notice] = 'Please fix errors and try again.' unless charge.success?
+    flash[:notice] = 'Please fix errors and try again.' unless charge.transaction
+
+    current_account.update!(join_transaction_id: charge.transaction.id)
     redirect_to member_path(current_account)
   end
 
@@ -22,14 +34,14 @@ class PaymentsController < ApplicationController
     )
   end
 
-  def charge
-    nonce = params.dig(:account, :payment_method_nonce)
+  memoize def charge
+    nonce = params.dig(:payment, :payment_method_nonce)
 
     gateway.transaction.sale(
-      amount: 125,
+      amount: self.class.amount,
       payment_method_nonce: nonce,
       customer: {
-        email: account_params.fetch(:email)
+        email: current_account.email
       },
       options: {
         submit_for_settlement: true
