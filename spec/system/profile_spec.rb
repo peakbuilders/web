@@ -14,6 +14,11 @@ describe 'profiles' do
     it 'allows changing the profile' do
       visit edit_profile_path(account)
 
+      fill_in 'account_email', with: another_account.email
+
+      expect { click_button 'Update Profile' }.to_not(change { account.reload.email })
+      expect(page).to have_css('.alert', text: 'Please fix errors below and try again.')
+
       fill_in 'account_first_name', with: 'Bart'
       fill_in 'account_last_name', with: 'Gargamel'
       fill_in 'account_email', with: 'bob@bob.com'

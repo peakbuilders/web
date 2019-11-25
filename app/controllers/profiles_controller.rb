@@ -10,6 +10,12 @@ class ProfilesController < ApplicationController
   def update
     @account = current_account
     @account.update(account_params)
+
+    unless @account.valid?
+      flash.now[:alert] = 'Please fix errors below and try again.'
+      return render :edit
+    end
+
     flash[:notice] = 'Profile updated.'
     redirect_to member_path(@account)
   end
