@@ -14,14 +14,22 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    flash[:notice] = 'Please fix errors and try again.' unless charge.success?
-    flash[:notice] = 'Please fix errors and try again.' unless charge.transaction
+    unless success?
+      flash[:notice] = 'Please fix errors and try again.'
+      return redirect_to new_payment_path
+    end
 
     current_account.update!(join_transaction_id: charge.transaction.id)
     redirect_to member_path(current_account)
   end
 
   private
+
+  def success?
+    return false unless charge.success?
+
+    charge.transaction
+  end
 
   def gateway
     env = Figaro.env.braintree_environment!.to_sym
