@@ -339,6 +339,7 @@ GEM
     simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    slack-notifier (2.3.2)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -421,6 +422,7 @@ DEPENDENCIES
   selenium-webdriver
   sentry-raven
   simple_form
+  slack-notifier
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)

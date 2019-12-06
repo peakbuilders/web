@@ -20,10 +20,19 @@ class PaymentsController < ApplicationController
     end
 
     current_account.update!(join_transaction_id: charge.transaction.id)
+    notify_slack
     redirect_to member_path(current_account)
   end
 
   private
+
+  def notify_slack
+    token = Figaro.env.slack_token!
+    return if token.empty?
+
+    client = Slack::Notifier.new token
+    client.ping "New user: #{current_account.email} - #{admin_account_url(current_account)}"
+  end
 
   def success?
     return false unless charge.success?

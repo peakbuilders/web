@@ -31,6 +31,8 @@ gem 'simple_form'
 
 gem 'memery'
 
+gem 'slack-notifier'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
