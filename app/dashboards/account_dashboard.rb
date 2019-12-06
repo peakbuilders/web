@@ -81,9 +81,7 @@ class AccountDashboard < Administrate::BaseDashboard
     work_description
     how_can_you_help
     how_can_you_be_helped
-    anything_else
     website
-    birthday
     twitter
     instagram
     facebook
@@ -110,9 +108,7 @@ class AccountDashboard < Administrate::BaseDashboard
     work_description
     how_can_you_help
     how_can_you_be_helped
-    anything_else
     website
-    birthday
     twitter
     instagram
     facebook
