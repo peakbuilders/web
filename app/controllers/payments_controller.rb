@@ -28,7 +28,7 @@ class PaymentsController < ApplicationController
 
   def notify_slack
     token = Figaro.env.slack_token!
-    return if token.empty?
+    return if token == 'none'
 
     client = Slack::Notifier.new token
     client.ping "New user: #{current_account.email} - #{admin_account_url(current_account)}"
