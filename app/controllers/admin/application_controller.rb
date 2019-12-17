@@ -11,7 +11,7 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      return true unless Rails.env == 'production'
+      return true if Rails.env.development?
 
       authenticate_or_request_with_http_basic do |username, password|
         username == 'admin' && password == Figaro.env.admin_password!
