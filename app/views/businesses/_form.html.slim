@@ -1,0 +1,12 @@
+= simple_form_for @business, class: 'center-form', url: businesses_path do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :name
+    = f.input :memo, as: :text
+    = f.input :city
+    = f.input :state
+
+  .form-actions
+    = f.submit "Save", data: { disable_with: false }
