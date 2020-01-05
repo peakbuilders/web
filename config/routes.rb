@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :businesses
   devise_for :accounts, skip: [:registrations]
 
   resources :accounts, only: %i[new create]

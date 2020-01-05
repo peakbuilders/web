@@ -1,0 +1,24 @@
+h1 Listing businesses
+
+table
+  thead
+    tr
+      th Name
+      th Memo
+      th City
+      th State
+
+  tbody
+    - @businesses.each do |business|
+      tr
+        td = business.name + " | "
+        td = business.memo + " | "
+        td = business.city + " | "
+        td = business.state + " | "
+        td = link_to 'Show', business
+        td = link_to 'Edit', edit_business_path(business)
+        td = link_to 'Destroy', business, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Business', new_business_path

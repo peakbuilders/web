@@ -1,0 +1,10 @@
+p#notice = notice
+
+p#name= @business.name
+p#memo= @business.memo
+p#city= @business.city
+p#state= @business.state
+
+=> link_to 'Edit', edit_business_path(@business)
+'|
+=< link_to 'Back', businesses_path
