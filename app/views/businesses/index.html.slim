@@ -1,0 +1,22 @@
+h1 Listing businesses
+
+table
+  thead
+    tr
+      th Name
+      th Memo
+      th City
+      th State
+
+  tbody
+    - @businesses.each do |business|
+      tr
+        td = business.name + " | "
+        td = business.memo + " | "
+        td = business.city + " | "
+        td = business.state + " | "
+        td = link_to 'Show', business
+
+br
+
+= link_to 'New Business', new_business_path

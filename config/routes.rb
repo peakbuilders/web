@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :payments, only: %i[new create]
   resources :members, only: %i[index show]
   resources :profiles, only: %i[edit update]
+  resources :businesses
 
   namespace :admin do
     resources :accounts
